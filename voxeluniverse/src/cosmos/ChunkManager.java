@@ -89,7 +89,7 @@ public class ChunkManager {
 
 	private void updateVisibilityList(Vector3f cameraPos) {
 		visibilityList.clear();
-        // Convert camera world pos → chunk coordinates
+        //Convert camera world pos to chunk coordinates
         int camCx = (int) Math.floor(cameraPos.x / (Chunk.CHUNK_SIZE * Chunk.BLOCK_RENDER_SIZE * 2));
         int camCy = (int) Math.floor(cameraPos.y / (Chunk.CHUNK_SIZE * Chunk.BLOCK_RENDER_SIZE * 2));
         int camCz = (int) Math.floor(cameraPos.z / (Chunk.CHUNK_SIZE * Chunk.BLOCK_RENDER_SIZE * 2));
@@ -152,7 +152,7 @@ public class ChunkManager {
 	private void updateSetupList() {
 		for (Chunk chunk : setupList) {
             if (chunk.isLoaded() && !chunk.isSetup()) {
-                chunk.setup(); // e.g., randomly activate some blocks or load heightmap
+                chunk.setup(); 
                 if (chunk.isSetup()) {
                     rebuildList.add(chunk);
                     forceVisibilityUpdate = true;
