@@ -1,0 +1,14 @@
+#version 150 
+
+in vec2 passTexCoord;
+
+out vec4 out_Color;
+
+uniform sampler2D textureSampler;
+uniform vec3 lightColor;
+
+void main(void){
+
+	out_Color = texture(textureSampler, passTexCoord);
+
+}
