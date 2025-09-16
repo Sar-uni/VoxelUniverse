@@ -119,14 +119,12 @@ public class Chunk {
         setup = true;
     }
 	public void load() {
-        // For demonstration—activate all blocks in a flat layer:
-        
         loaded = true;
     }
 	
 	public void unload() {
         // 
-        // loader.deleteVAO(model.getRawModel().getVaoID());
+        //loader.deleteVAO(model.getRawModel().getVaoID());
         model = null;
         loaded = false;
         setup  = false;
@@ -134,7 +132,7 @@ public class Chunk {
 	
 	public void setBlock(int x, int y, int z, BlockTypes type, boolean active) {
         if (!inBounds(x, y, z)) return;
-        //blocks[x][y][z].setType(type);  // if your Block supports types
+        //blocks[x][y][z].setType(type);
         blocks[x][y][z].setActive(active);
     }
 
